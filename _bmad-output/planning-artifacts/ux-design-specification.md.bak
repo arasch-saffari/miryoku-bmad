@@ -1,0 +1,798 @@
+---
+project_name: 'bmad-miryoku'
+user_name: 'Arasch'
+date: '2026-01-06'
+stepsCompleted: [1]
+inputDocuments:
+  miryokuResearch:
+    - GitHub: manna-harbour/miryoku (official repository, 3.1k stars)
+    - Miryoku Reference Manual (official documentation)
+    - "Switching To Miryoku" blog post (Austin Wilcox, Sep 2024)
+    - Reddit: r/ErgoMechKeyboards discussions (HRM, EurKey, layers)
+    - Home Row Mods guides and tutorials
+  productBriefs:
+    - prd-shards/01-executive-summary.md (186 lines, 10KB)
+    - prd-shards/02-success-criteria.md (204 lines, 18KB)
+    - prd-shards/04-user-journeys.md (1012 lines, 50KB) ⭐ KRITISCH FÜR UX
+    - prd-shards/05-functional-requirements.md (3159 lines, 55KB)
+    - prd-shards/06-non-functional-requirements.md (999 lines, 38KB)
+  research:
+    - technical-typing-learning-architecture-gamification-2026-01-05.md (907 lines)
+    - domain-rsi-ergonomics-keyboard-adoption-2026-01-05/ (5 shards, 260KB total)
+  brainstorming:
+    - brainstorming/index.md (index file)
+    - brainstorming/top-10-prioritized-features.md (465 lines) ⭐ KRITISCH FÜR UX
+    - brainstorming/worst-possible-idea.md (300 lines) ⭐ ANTI-PATTERNS
+    - brainstorming/main-session.md (511 lines)
+    - brainstorming/morphological-matrix.md (416 lines)
+  projectContext:
+    - project-context.md (1124 lines, 40KB)
+    - project-context-shards/01-project-overview-tech-stack.md (5.6KB)
+    - project-context-shards/02-critical-rules-1-13.md (11KB)
+    - project-context-shards/03-critical-rules-14-25.md (11KB)
+    - project-context-shards/04-domain-testing-config.md (16KB)
+workflow: 'create-ux-design'
+lastStep: 1
+---
+
+# UX Design Specification: bmad-miryoku (miryoku.space)
+
+**Author:** Arasch
+**Date:** 2026-01-06
+**Status:** Initialisiert - Ready for UX Discovery
+
+---
+
+## Dokument-Setup Abgeschlossen
+
+**Willkommen Arasch!** Ich habe deinen UX-Design-Workspace für **bmad-miryoku** (miryoku.space) eingerichtet.
+
+---
+
+## Gefundene und Geladene Dokumente:
+
+### ✅ Product Brief (1 Datei, 953 Zeilen)
+- **product-brief-bmad-miryoku-2026-01-06.md**
+  - Vision, Mission, Target Users
+  - 4 Personas: Thomas (Dev mit RSI), Sarah (Writer), Felix (Gamer), Alex (US-only)
+  - Core Differentiator: Predictive State Visualization
+  - Business Model: Non-Profit mit Spenden
+
+### ✅ PRD Shards (6 Dateien, 5.813 Zeilen gesamt)
+- **Shard 1: Executive Summary** (186 Zeilen) - Product Vision, Story, Success Metrics
+- **Shard 2: Success Criteria** (204 Zeilen) ⭐ - User/Business/Technical Success, KPIs
+- **Shard 3: Product Scope** (nicht geladen, für UX weniger kritisch)
+- **Shard 4: User Journeys** (1.012 Zeilen) ⭐⭐⭐ **KRITISCH FÜR UX**
+  - 8 Complete Journeys (4 Core + 4 Edge Case)
+  - 5 Micro-Journeys (Touchpoints)
+  - Requirements Extraction pro Journey
+  - Party Mode Feedback inklusive
+- **Shard 5: Functional Requirements** (3.159 Zeilen) - FR-1 bis FR-50+, Innovation Patterns
+- **Shard 6: Non-Functional Requirements** (999 Zeilen) - Performance, Accessibility, GDPR
+
+### ✅ Research (2 Dokumente, 1.167 Zeilen)
+- **technical-typing-learning-architecture-gamification-2026-01-05.md** (907 Zeilen)
+  - Program Architecture & Curriculum Design
+  - Gamification Mechanics (XP, Achievements, Streaks, Leaderboards)
+  - Progress Tracking & Analytics
+  - Adaptive Difficulty Algorithms (FSRS)
+  - Best Practices von Keybr, Monkeytype, TypeLit
+- **domain-rsi-ergonomics-keyboard-adoption-2026-01-05/** (5 Shards)
+  - Industry Analysis, Competitive Landscape, Regulatory Requirements
+  - Technical Trends, Research Synthesis
+
+### ✅ Brainstorming (4 Dokumente, 1.692 Zeilen)
+- **top-10-prioritized-features.md** (465 Zeilen) ⭐⭐⭐ **KRITISCH FÜR UX**
+  - Top 10 Features mit Priority Levels (⭐⭐⭐ Critical, ⭐⭐ High, ⭐ Medium)
+  - Implementation Priority (MVP vs Growth vs Enhancement)
+  - Critical Success Factors
+- **worst-possible-idea.md** (300 Zeilen) ⭐⭐ **ANTI-PATTERNS**
+  - 15 Anti-Patterns (was NICHT zu tun)
+  - 7 Critical Requirements (aus Negativ-Beispielen)
+- **main-session.md** (511 Zeilen) - 6 Brainstorming Techniken, 150+ Ideen
+- **morphological-matrix.md** (416 Zeilen) - Design Space Matrix (1.600 combinations)
+
+### ✅ Project Context (1 gesamt + 4 Shards, 1.124 Zeilen)
+- **project-context.md** - Vollständige Tech Stack Definition, Critical Rules
+- **Shard 1:** Project Overview + Tech Stack (Next.js 15+, React 19+, Three.js, Tailwind, shadcn/ui, Magic UI)
+- **Shard 2:** Critical Rules 1-13 (TypeScript, App Router, Client Components, State Updates)
+- **Shard 3:** Critical Rules 14-25 (Error Boundaries, SEO, Security, Performance, Magic UI)
+- **Shard 4:** Miryoku Domain Rules + Testing + Config
+
+---
+
+## Zusammenfassung der UX-Kritischen Informationen:
+
+### 🎯 Top 10 Features (aus Brainstorming)
+
+**⭐⭐⭐ CRITICAL für MVP:**
+1. **Predictive Visualization für Home Row Mods** - Killer Feature, löst #1 Lernbarriere
+2. **Interaktiver Split-Tastatur-Spiegel** - 3x5+3 Matrix für beide Hände
+3. **Personalisiertes Curriculum** - Dev vs. Writer vs. Gamer Pfade
+4. **Adaptive Difficulty (FSRS)** - Wissenschaftlich fundierter Spaced Repetition Algorithmus
+5. **Duolingo-Style Gamification** - XP, Levels, Streaks, Achievements
+
+**⭐⭐ HIGH Priority (Growth Phase):**
+6. **Slow-Motion Training Mode** - Für tieferes Verständnis
+7. **EurKey Integration** - Deutsche Sonderzeichen (ä, ö, ü, ß)
+8. **Code-Book Practice** - Real Code (React, Python, etc.)
+9. **Bilateral HRM Training** - Fortgeschrittene Modifier-Kombinationen
+
+**⭐ MEDIUM (Enhancement):**
+10. **Fehler-Muster-Analyse & Smart Hints** - Intelligenter Feedback
+
+### 📖 User Journeys (8 Complete + 5 Micro)
+
+**Core Journeys:**
+- **Thomas (Developer mit RSI)** - Pain → Confusion → Epiphany → Flow → Leadership
+- **Sarah (German Writer)** - EurKey Challenge → Sym-Layer Mastery
+- **Felix (Gamer)** - Gaming Mode, Competitive Metrics
+- **Alex (US-only Dev)** - Fast-Track ohne EurKey
+
+**Edge Case Journeys:**
+- **Journey 5: Error Recovery** - Thomas nach Rückschlag (Gentle Recovery Mode)
+- **Journey 6: Churn Prevention** - "Miryoku ist nicht für mich" (Max gibt auf)
+- **Journey 7: Cold Start** - Julia entdeckt miryoku.space ("Was ist Miryoku?")
+- **Journey 8: Viral Loop** - Thomas rekrutiert Sarah (User Advocacy)
+
+**Micro-Journeys (30-60 Sekunden Touchpoints):**
+1. First Hour Celebration (Konfetti, Achievement)
+2. First Error - Constructive Feedback (kein Shame)
+3. Bad Day - Gentle Nudge (empathetic notification)
+4. Bigramm Mastery - Achievement (measurable progress)
+5. Donation Decision - Value Realization CTA
+
+### 🚫 Anti-Patterns (was NICHT zu tun)
+
+**7 Todsünden einer Lernplattform:**
+1. No Feedback = Black Box Training → **Visuelles Feedback ist UNVERZICHTBAR**
+2. No Consistency = Random Chaos → **Konsistenz und Vorhersehbarkeit**
+3. No Progress Saving = 10-Stunden Marathon → **Micro-Learning mit Autosave**
+4. Negative Reinforcement = Shaming → **Positive Verstärkung**
+5. Paywalls = Pay-to-Win → **Freemium mit VALUE**
+6. No Relevance = One-Size-Fits-None → **Personalisierung**
+7. No Motivation = Endlose Treppe → **Community & Celebrations**
+
+### 🎨 Tech Stack & Design Libraries
+
+**Frontend:**
+- **Next.js 15+** (App Router, Server Components)
+- **React 19+** (Client Components für Interactive Features)
+- **TypeScript 5+** (Strict Mode - NON-NEGOTIABLE)
+- **Tailwind CSS 3+** (Utility-First Styling)
+- **shadcn/ui** (High-Quality Components, Radix UI based)
+- **Magic UI** (Animated Effects, Framer Motion powered)
+- **Framer Motion** (Smooth Animations, 60fps target)
+- **Lucide Animated** (Animated Icons für Gamification Feedback)
+
+**Visualization:**
+- **Three.js r150+** (WebGL 3D Keyboard Visualization)
+- **Canvas API** (2D Fallback für Firefox/Safari)
+- **WebHID API** (Direct Hardware Communication - Chrome/Edge only)
+
+**Performance Requirements:**
+- **60fps** Rendering Target (Critical für Predictive Viz)
+- **<16ms** Feedback Latency (Real-time Response)
+- **<100ms** Page Load (High-End), <200ms (Mid-Range)
+
+---
+
+## ⌨️ Miryoku Layout Architecture (Domain Knowledge)
+
+**Quelle:** PERSONALISIERTE KONFIGURATION von Arasch
+**Referenz:** `/Users/araschsaffari/cc/dev/bmad/bmad-miryoku/_bmad-output/planning-artifacts/miryoku-user-layer-reference.md`
+
+### Miryoku Design Philosophy
+
+Miryoku ist ein **ergonomic, minimal, orthogonal, and universal keyboard layout** für 36-Tasten split keyboards.
+
+**Core Design Principles:**
+1. **Use layers instead of reaching** - Keine Finger-Stretching
+2. **Use both hands instead of contortions** - Symmetrische Modifier
+3. **Keep fingers on home row** - Minimal finger travel (max 1u distance)
+4. **Prevent finger movement > 1u** - Shortest possible travel distance
+5. **Symmetrical press-and-hold** - Same modifiers on both hands
+
+---
+
+## 🎯 GOLDEN RULES (FÜR DIESE KONFIGURATION)
+
+1. **Home Row Mods:** Die Tasten `A/R/S/T` (Links) und `N/E/I/O` (Rechts) fungieren als `Super/Alt/Ctrl/Shift` nur wenn **GEHALTEN**. Wenn getippt, sind sie Buchstaben.
+2. **Opposite Hand Rule:** Bei Verwendung eines Modifiers (Shift oder Ctrl) immer den Modifier auf der *gegenüberliegenden Hand* des Buchstabens verwenden.
+   - *Beispiel:* Für "Shift + A", `N` (Rechts Shift) halten und `A` tippen.
+3. **Layer Priority:** Spezifische Layers (Nav/Sym) vor komplexen Modifier-Kombinationen bevorzugen.
+   - *Beispiel:* Für "Copy" den **Nav Layer** verwenden statt "Ctrl+C".
+
+---
+
+### Layout Structure: 3x5+3 Matrix (36 Keys)
+
+**Physical Layout (Colemak Mod-DH Alphas - PERSÖNLICHE KONFIGURATION):**
+
+```
+       LEFT HAND                               RIGHT HAND
+ .-----------------------.               .-----------------------.
+ |  Q |  W |  F |  P |  B |             |  J |  L |  U |  Y |  ' |
+ |----+----+----+----+----|             |----+----+----+----+----|
+ |  A |  R |  S |  T |  G |             |  M |  N |  E |  I |  O |
+ |Sup |Alt |Ctrl|Shft|    |             |    |Shft|Ctrl|Alt |Sup |
+ |----+----+----+----+----|             |----+----+----+----+----|
+ |  Z |  X |  C |  D |  V |             |  K |  H |  , |  . |  / |
+ '----'----'----'----'----'             '----'----'----'----'----'
+           .-----------------.       .-----------------.
+           | Esc | Spc | Tab |       | Ent | Bksp| Del |
+           '-----------------'       '-----------------'
+ Hold:    (Media)(Nav) (Mouse)       (Sym) (Num) (Fun)
+```
+
+**PERSÖNLICHE ANPASSUNGEN (abweichend von offiziellem GitHub):**
+- **Top Row Right Pinky:** Apostroph (') statt Semicolon (;)
+- **Home Row Mods:** M=kein HRM, N=Shift, E=Ctrl, I=Alt, O=Super (asymmetrisch!)
+- **Thumb Cluster:** Esc(Media), Space(Nav), Tab(Mouse) | Enter(Sym), Backspace(Num), Delete(Fun)
+
+**COLEMAK MOD-DH HOME ROW:** `arstnmio` (die am häufigsten verwendeten Buchstaben!)
+- **a r s t** (linke Hand) - Home Row Position mit Super, Alt, Ctrl, Shift
+- **m n e i o** (rechte Hand) - Home Row Position mit Shift, Ctrl, Alt, Super
+- **Gleichmäßige Verteilung** der häufigsten Buchstaben auf beide Hände
+
+**Total:** 30 finger keys + 6 thumb keys = **36 keys**
+
+---
+
+## 📚 COMPLETE LAYER MAPPINGS (PERSÖNLICHE KONFIGURATION)
+
+**WICHTIG:** Alle Layer-Mappings sind aus der personalisierten Konfiguration von Arasch.
+**Referenz:** `/Users/araschsaffari/cc/dev/bmad/bmad-miryoku/_bmad-output/planning-artifacts/miryoku-user-layer-reference.md`
+
+---
+
+### 🔵 LAYER 1: NAV (Navigation & Editing)
+**Activation:** Hold **Left Thumb (Space)**
+
+```
+       LEFT HAND (Modifiers)                   RIGHT HAND (Navigation)
+ .-----------------------.               .-----------------------.
+ |    |    |    |    |    |             |Redo|Pste|Copy|Cut |Undo|
+ |----+----+----+----+----|             |----+----+----+----+----|
+ |Sup |Alt |Ctrl|Shft|    |             |Caps|Left|Down| Up |Rght|
+ |----+----+----+----+----|             |----+----+----+----+----|
+ |    |    |    |    |    |             | Ins|Home|PgDn|PgUp|End |
+ '----'----'----'----'----'             '----'----'----'----'----'
+```
+
+**Purpose:** Cursor movement, text selection, clipboard operations
+**Key Features:**
+- Left Hand: Modifiers für "Chording" (Shift+Arrow, Ctrl+Click)
+- Right Hand Top: Undo, Cut, Copy, Paste, Redo
+- Right Hand Home: Caps Lock, Left, Down, Up, Right (VIM-style)
+- Right Hand Bottom: Insert, Home, PageDown, PageUp, End
+
+---
+
+### 🐭 LAYER 2: MOUSE (Mouse Emulation)
+**Activation:** Hold **Left Thumb (Tab)**
+
+```
+       LEFT HAND (Modifiers)                   RIGHT HAND (Mouse Control)
+ .-----------------------.               .-----------------------.
+ |    |    |    |    |    |             |Redo|Pste|Copy|Cut |Undo|
+ |----+----+----+----+----|             |----+----+----+----+----|
+ |Sup |Alt |Ctrl|Shft|    |             |    | Ms←| Ms↓| Ms↑| Ms→|
+ |----+----+----+----+----|             |----+----+----+----+----|
+ |    |    |    |    |    |             |    | Wh←| Wh↓| Wh↑| Wh→|
+ '----'----'----'----'----'             '----'----'----'----'----'
+                                     Thumbs: Right(R), Left(L), Mid(M)
+```
+
+**Purpose:** Mouse cursor movement, scrolling, clicking
+**Key Features:**
+- Left Hand: Modifiers für "Chording" (Ctrl+Click, Shift+Drag)
+- Right Hand Top: Undo, Cut, Copy, Paste, Redo
+- Right Hand Home: Mouse Left, Down, Up, Right
+- Right Hand Bottom: Wheel Left, Down, Up, Right
+- Thumb Buttons: Enter=RightClick, Backspace=LeftClick, Delete=MiddleClick
+
+---
+
+### 🟣 LAYER 3: MEDIA (Media & Hardware)
+**Activation:** Hold **Left Thumb (Esc)**
+
+```
+       LEFT HAND (Modifiers)                   RIGHT HAND (Media/HW)
+ .-----------------------.               .-----------------------.
+ |    |    |    |    |    |             |TgRg|MdRg|HuRg|SaRg|VaRg|
+ |----+----+----+----+----|             |----+----+----+----+----|
+ |Sup |Alt |Ctrl|Shft|    |             |TgEp|Prev|Vol-|Vol+|Next|
+ |----+----+----+----+----|             |----+----+----+----+----|
+ |    |    |    |    |    |             |TgOu|BT 0|BT 1|BT 2|BT 3|
+ '----'----'----'----'----'             '----'----'----'----'----'
+ Thumbs: Stop (■), Play/Pause (⏯), Mute (🔇)
+```
+
+**Purpose:** Media playback control, RGB lighting, Bluetooth management
+**Key Features:**
+- Right Hand Top (RGB): RGB Toggle, Mode, Hue, Saturation, Value
+- Right Hand Home (Media): EP Toggle, Previous, Vol-, Vol+, Next
+- Right Hand Bottom (Bluetooth): Output Toggle, BT 0-3 Profiles
+- Thumb Playback: Stop (Enter), Play/Pause (Backspace), Mute (Delete)
+
+---
+
+### 🔢 LAYER 4: NUM (Numbers & Math)
+**Activation:** Hold **Right Thumb (Backspace)**
+
+```
+       LEFT HAND (Numpad)                      RIGHT HAND (Modifiers)
+ .-----------------------.               .-----------------------.
+ |  [ |  7 |  8 |  9 |  ] |             |    |    |    |    |    |
+ |----+----+----+----+----|             |----+----+----+----+----|
+ |  ; |  4 |  5 |  6 |  = |             |    |Shft|Ctrl|Alt |Sup |
+ |----+----+----+----+----|             |----+----+----+----+----|
+ |  ` |  1 |  2 |  3 |  \ |             |    |    |    |    |    |
+ '----'----'----'----'----'             '----'----'----'----'----'
+ Thumbs: . (Outer), 0 (Middle), - (Inner)
+```
+
+**Purpose:** Number entry, mathematical operators
+**Key Features:**
+- Numpad Layout: 7-8-9 (Top), 4-5-6 (Home), 1-2-3 (Bottom)
+- Right Hand: Modifiers für Shortcuts (Ctrl+1, Alt+4)
+- Thumb Keys: . (Esc), 0 (Space), - (Tab)
+- Format: Base Key (Shift Symbol)
+
+---
+
+### 🔣 LAYER 5: SYM (Programming Symbols)
+**Activation:** Hold **Right Thumb (Enter)**
+
+```
+       LEFT HAND (Symbols)                     RIGHT HAND (Modifiers)
+ .-----------------------.               .-----------------------.
+ |  { |  & |  * |  ( |  } |             |    |    |    |    |    |
+ |----+----+----+----+----|             |----+----+----+----+----|
+ |  : |  $ |  % |  ^ |  + |             |    |Shft|Ctrl|Alt |Sup |
+ |----+----+----+----+----|             |----+----+----+----+----|
+ |  ~ |  ! |  @ |  # |  | |             |    |    |    |    |    |
+ '----'----'----'----'----'             '----'----'----'----'----'
+ Thumbs: ( (Outer), ) (Middle), _ (Inner)
+```
+
+**Purpose:** Access to frequent programming symbols without holding Shift
+**Key Features:**
+- Layout mirrors Num Layer but outputs Shifted symbols
+- Right Hand: Modifiers für Symbol Shortcuts
+- Thumb Keys: ( (Esc), ) (Space), _ (Tab)
+
+---
+
+### ⚙️ LAYER 6: FUN (Function Keys)
+**Activation:** Hold **Right Thumb (Delete)**
+
+```
+      LEFT HAND (Function)                    RIGHT HAND (Modifiers)
+ .-----------------------.               .-----------------------.
+ | F12| F7 | F8 | F9 |PrSc|             |    |    |    |    |    |
+ |----+----+----+----+----|             |----+----+----+----+----|
+ | F11| F4 | F5 | F6 |ScLk|             |    |Shft|Ctrl|Alt |Sup |
+ |----+----+----+----+----|             |----+----+----+----+----|
+ | F10| F1 | F2 | F3 |Paus|             |    |    |    |    |    |
+ '----'----'----'----'----'             '----'----'----'----'----'
+```
+
+**Purpose:** Function keys (F1-F12) and system keys
+**Key Features:**
+- Numpad-Mirror Layout: F1-F9 match 1-9 positions
+- Right Hand: Modifiers für System Shortcuts (Alt+F4, Ctrl+F11)
+- System Keys: PrtScn, Scroll Lock, Pause Break
+- Thumb Keys: App/Menu (Esc), Space (normal), Tab (normal)
+
+---
+
+## 📖 THUMB CLUSTER REFERENCE
+
+**Left Thumbs (Outer → Inner):**
+1. **Esc** → Media Layer (when held)
+2. **Space** → Nav Layer (when held)
+3. **Tab** → Mouse Layer (when held)
+
+**Right Thumbs (Inner → Outer):**
+1. **Enter** → Sym Layer (when held)
+2. **Backspace** → Num Layer (when held)
+3. **Delete** → Fun Layer (when held)
+
+---
+
+## 🎮 HOME ROW MODS (KRITISCHES FEATURE)
+
+**PERSÖNLICHE KONFIGURATION (abweichend von GitHub!):**
+
+| Key | Tap Action | Hold Action | Symmetric Key (Right Hand) |
+|-----|-------------|-----------------|----------------------------|
+| **A** | Type 'a' | **Super/Win** | **I** |
+| **R** | Type 'r' | **Alt** | **E** |
+| **S** | Type 's' | **Ctrl** | **N** |
+| **T** | Type 't' | **Shift** | **M** (kein HRM!) |
+
+**Rechte Hand (NICHT symmetrisch!):**
+
+| Key | Tap Action | Hold Action |
+|-----|-------------|-----------------|
+| **M** | Type 'm' | **- (kein HRM)** |
+| **N** | Type 'n' | **Shift** |
+| **E** | Type 'e' | **Alt** |
+| **I** | Type 'i' | **Super/Win** |
+| **O** | Type 'o' | **Super/Win** |
+
+**UX Implication:**
+- **Biggest Learning Barrier:** User muss lernen: "Ist das ein Tastendruck oder ein Modifier?"
+- **Predictive Visualization Purpose:** Zeigt VORHER an: "Wenn du jetzt 't' drückst und hältst, wird das Shift!"
+- **Asymmetrie:** Rechte Hand hat M ohne HRM, O mit Super (anders als offizielles Miryoku)
+           │     │     │ Num │ │     │     │     │
+           └─────┴─────┴─────┘ └─────┴─────┴─────┘
+```
+
+**Activation:** Thumb Key (Num)
+
+**Key Mapping:**
+- Top Row (links nach rechts): 6, 5, 4, 3, 2 | 7, 8, 9, 0
+- Home Row (links nach rechts): /, *, -, (leer), 0 | +, =, (, )
+- Bottom Row: leer (nicht belegt)
+
+---
+
+#### **LAYER 2: SYMBOL** (Sym - OFFIZIELLES MIRYOKU LAYOUT)
+
+```
+Left Hand (Symbol)             Right Hand (Symbol)
+┌─────┬─────┬─────┬─────┬─────┐ ┌─────┬─────┬─────┬─────┬─────┐
+│  ~  │  !  │  @  │  #  │  $  │ │  %  │  ^  │  &  │  *  │  (  │
+├─────┼─────┼─────┼─────┼─────┤ ├─────┼─────┼─────┼─────┼─────┤
+│  )  │  =  │  `  │  +  │  [  │ │  ]  │  {  │  }  │  \  │  |  │
+├─────┼─────┼─────┼─────┼─────┤ ├─────┼─────┼─────┼─────┼─────┤
+│  /  │  ;  │  :  │  '  │  "  │ │  <  │  >  │  ,  │  .  │  ?  │
+└─────┴─────┴─────┴─────┴─────┘ └─────┴─────┴─────┴─────┴─────┘
+           ┌─────┬─────┬─────┐ ┌─────┬─────┬─────┐
+           │     │     │ Sym │ │     │     │     │
+           └─────┴─────┴─────┘ └─────┴─────┴─────┘
+```
+
+**Activation:** Thumb Key (Sym)
+
+**Key Mapping:**
+- Top Row (links nach rechts): ~, !, @, #, $ | %, ^, &, *, (
+- Home Row (links nach rechts): ), =, `, +, [ | ], {, }, \, |
+- Bottom Row (links nach rechts): /, ;, :, ', " | <, >, ,, ., ?
+
+**WICHTIG:** EurKey (ä, ö, ü, ß) ist NICHT im offiziellen Miryoku Standard-Layout enthalten. EurKey ist ein separates, optionales Layout für deutsche Benutzer, aber kein Teil des Kern-Miryoku-Designs.
+
+---
+
+#### **LAYER 3: FUNCTION** (Fun - OFFIZIELLES MIRYOKU LAYOUT)
+
+```
+Left Hand (Function)            Right Hand (Function)
+┌─────┬─────┬─────┬─────┬─────┐ ┌─────┬─────┬─────┬─────┬─────┐
+│  F1 │  F2 │  F3 │  F4 │  F5 │ │  F6 │  F7 │  F8 │  F9 │ F10 │
+├─────┼─────┼─────┼─────┼─────┤ ├─────┼─────┼─────┼─────┼─────┤
+│ F11 │ F12 │ Esc │PScr │     │ │     │     │     │     │     │
+├─────┼─────┼─────┼─────┼─────┤ ├─────┼─────┼─────┼─────┼─────┤
+│     │     │     │     │     │ │     │     │     │     │     │
+└─────┴─────┴─────┴─────┴─────┘ └─────┴─────┴─────┴─────┴─────┘
+           ┌─────┬─────┬─────┐ ┌─────┬─────┬─────┐
+           │     │     │ Fun │ │     │     │     │
+           └─────┴─────┴─────┘ └─────┴─────┴─────┘
+```
+
+**Activation:** Thumb Key (Fun)
+
+**Key Mapping:**
+- Top Row (links nach rechts): F1, F2, F3, F4, F5 | F6, F7, F8, F9, F10
+- Home Row (links nach rechts): F11, F12, Esc, PrintScreen | (leer)
+- Bottom Row: leer (nicht belegt)
+
+---
+
+#### **LAYER 4: NAVIGATION** (Nav - OFFIZIELLES MIRYOKU LAYOUT)
+
+```
+Left Hand (Navigation)           Right Hand (Navigation)
+┌─────┬─────┬─────┬─────┬─────┐ ┌─────┬─────┬─────┬─────┬─────┐
+│ Tab │ Ins │Home │ End │PgUp │ │PgDn │     │     │     │     │
+├─────┼─────┼─────┼─────┼─────┤ ├─────┼─────┼─────┼─────┼─────┤
+│     │     │     │     │     │ │  ← │  ↓ │  ↑ │  → │     │
+├─────┼─────┼─────┼─────┼─────┤ ├─────┼─────┼─────┼─────┼─────┤
+│     │     │     │     │     │ │     │     │     │     │     │
+└─────┴─────┴─────┴─────┴─────┘ └─────┴─────┴─────┴─────┴─────┘
+           ┌─────┬─────┬─────┐ ┌─────┬─────┬─────┐
+           │     │     │ Nav │ │     │     │     │
+           └─────┴─────┴─────┘ └─────┴─────┴─────┘
+```
+
+**Activation:** Thumb Key (Nav)
+
+**Key Mapping:**
+- Top Row (links nach rechts): Tab, Insert, Home, End, PageUp | PageDown
+- Home Row (rechts): Arrow Keys (← ↓ ↑ →)
+- Bottom Row: leer (nicht belegt)
+
+---
+
+#### **LAYER 5: MOUSE** (Mouse - OFFIZIELLES MIRYOKU LAYOUT)
+
+```
+Left Hand (Mouse)               Right Hand (Mouse)
+┌─────┬─────┬─────┬─────┬─────┐ ┌─────┬─────┬─────┬─────┬─────┐
+│     │     │WhlUp │     │     │ │     │WhlDn│     │     │     │
+├─────┼─────┼─────┼─────┼─────┤ ├─────┼─────┼─────┼─────┼─────┤
+│     │     │     │     │     │ │Btn1│Btn2│Btn3│     │     │
+├─────┼─────┼─────┼─────┼─────┤ ├─────┼─────┼─────┼─────┼─────┤
+│     │     │     │     │     │ │     │     │     │     │     │
+└─────┴─────┴─────┴─────┴─────┘ └─────┴─────┴─────┴─────┴─────┘
+           ┌─────┬─────┬─────┐ ┌─────┬─────┬─────┐
+           │     │     │Mse │ │     │     │     │
+           └─────┴─────┴─────┘ └─────┴─────┴─────┘
+```
+
+**Activation:** Thumb Key (Mse)
+
+**Key Mapping:**
+- Top Row: WhlUp (links) | WhlDn (rechts) - Mausrad
+- Home Row (rechts): Btn1 (Left Click), Btn2 (Right Click), Btn3 (Middle Click)
+- Bottom Row: leer (nicht belegt)
+
+---
+
+#### **LAYER 6: MEDIA** (Media - OFFIZIELLES MIRYOKU LAYOUT)
+
+```
+Left Hand (Media)               Right Hand (Media)
+┌─────┬─────┬─────┬─────┬─────┐ ┌─────┬─────┬─────┬─────┬─────┐
+│     │     │     │     │     │ │     │     │     │     │     │
+├─────┼─────┼─────┼─────┼─────┤ ├─────┼─────┼─────┼─────┼─────┤
+│     │     │     │     │     │ │Vol- │Mute │Vol+ │     │     │
+├─────┼─────┼─────┼─────┼─────┤ ├─────┼─────┼─────┼─────┼─────┤
+│     │     │     │     │     │ │     │ Play │ Prev│ Next│     │
+└─────┴─────┴─────┴─────┴─────┘ └─────┴─────┴─────┴─────┴─────┘
+           ┌─────┬─────┬─────┐ ┌─────┬─────┬─────┐
+           │     │     │ Med │ │     │     │     │
+           └─────┴─────┴─────┘ └─────┴─────┴─────┘
+```
+
+**Activation:** Thumb Key (Med)
+
+**Key Mapping:**
+- Home Row (rechts): Vol-, Mute, Vol+
+- Bottom Row (rechts): Play, Prev, Next
+
+---
+
+#### **LAYER 7: BUTTON/ADJUST** (Button - OFFIZIELLES MIRYOKU LAYOUT)
+
+```
+Left Hand (Button)              Right Hand (Button)
+┌─────┬─────┬─────┬─────┬─────┐ ┌─────┬─────┬─────┬─────┬─────┐
+│     │     │     │     │     │ │     │     │     │     │     │
+├─────┼─────┼─────┼─────┼─────┤ ├─────┼─────┼─────┼─────┼─────┤
+│     │     │     │     │     │ │     │     │     │     │     │
+├─────┼─────┼─────┼─────┼─────┤ ├─────┼─────┼─────┼─────┼─────┤
+│     │     │     │     │     │ │     │     │     │     │     │
+└─────┴─────┴─────┴─────┴─────┘ └─────┴─────┴─────┴─────┴─────┘
+           ┌─────┬─────┬─────┐ ┌─────┬─────┬─────┐
+           │ Btn │     │     │ │     │     │ Btn │
+           └─────┴─────┴─────┘ └─────┴─────┴─────┘
+```
+
+**Activation:** Thumb Keys (Btn)
+
+**Hinweis:** Der Button/Adjust Layer wird für systemweite Funktionen verwendet (z.B. Reset, Debug, Konfiguration).
+
+---
+
+### THUMB CLUSTER MAPPINGS (OFFIZIELL)
+
+**WICHTIG:** Die Thumb Cluster Aktivierungen variieren je nach Firmware-Implementierung (QMK, ZMK, etc.). Die folgende Tabelle zeigt die typische Konfiguration:
+
+**Left Thumb Cluster:**
+| Thumb Key | Tap Action | Hold Action (Typical) |
+|-----------|------------|----------------------|
+| **Thumb 1 (Outer)** | Alt | Layer (z.B. Media oder Mouse) |
+| **Thumb 2 (Center)** | Tab | Layer (z.B. Navigation) |
+| **Thumb 3 (Inner)** | Super/Win | Space oder Layer-Toggle |
+
+**Right Thumb Cluster:**
+| Thumb Key | Tap Action | Hold Action (Typical) |
+|-----------|------------|----------------------|
+| **Thumb 1 (Inner)** | Enter | Space |
+| **Thumb 2 (Center)** | Backspace | Space oder Layer-Toggle |
+| **Thumb 3 (Outer)** | Space | Layer (z.B. Num oder Sym) |
+
+**Hinweis:** Die exakte Belegung der Thumb Keys kann je nach Firmware und persönlichen Präferenzen variieren. Miryoku empfiehlt eine konsistente Belegung über beide Hände hinweg.
+
+---
+
+### Home Row Mods (HRM) - KRITISCHES FEATURE
+
+**Symmetrische Modifier auf Home Row (OFFIZIELLES MIRYOKU LAYOUT):**
+
+| Key | Press (Tap) | Hold (Modifier) | Symmetric Key (Right Hand) |
+|-----|-------------|-----------------|----------------------------|
+| **a** | Type 'a' | **Super (Win/Cmd)** | **i** |
+| **r** | Type 'r' | **Alt (Option)** | **e** |
+| **s** | Type 's' | **Ctrl** | **n** |
+| **t** | Type 't' | **Shift** | **m** |
+
+**Symmetrische HRM auf rechter Hand:**
+
+| Key | Press (Tap) | Hold (Modifier) |
+|-----|-------------|-----------------|
+| **m** | Type 'm' | **Shift** |
+| **n** | Type 'n' | **Ctrl** |
+| **e** | Type 'e' | **Alt** |
+| **i** | Type 'i' | **Super (Win/Cmd)** |
+| **o** | Type 'o' | (kein HRM - normaler Buchstabe) |
+
+**UX Implication:**
+- **Biggest Learning Barrier:** User muss lernen: "Ist das ein Tastendruck oder ein Modifier?"
+- **Predictive Visualization Purpose:** Zeigt VORHER an: "Wenn du jetzt 't' drückst und hältst, wird das Shift!"
+- **Symmetry Advantage:** Selbe Modifier auf beiden Händen = bilaterale Kombinationen möglich
+
+**Common HRM Combinations:**
+- `t(left) + m(right)` = Shift + Shift = **Caps Lock Effect**
+- `s(left) + n(right)` = Ctrl + Ctrl (symmetrisch, beide Hände Ctrl)
+- `t(left) + s(right)` = Shift + Ctrl (bilaterale Kombination)
+- `r(left) + e(right)` = Alt + Alt (symmetrisch, beide Hände Alt)
+- `a(left) + i(right)` = Super + Super = **Hyper Combo**
+
+---
+
+### Layer Activation System (OFFIZIELL)
+
+Miryoku verwendet **8 spezialisierte Layers** für alle Standard-Tastatur-Funktionen. Die Layer werden durch verschiedene Methoden aktiviert:
+
+#### **Layer 0: BASE** (Standard)
+- **Letters:** Colemak Mod-DH alphas
+- **Basic Punctuation:** Space, Enter, Backspace, Tab
+- **Thumb Keys:** Alt, Tab, Super | Enter, Backspace, Space
+- **Usage:** 90% der Zeit
+- **Activation:** Default (keine Aktivierung nötig)
+
+#### **Layer 1: NUM** (Numbers & Basic Math)
+- **Numbers:** 0-9 und mathematische Operatoren (+, -, *, /)
+- **Activation:** Thumb Key (Num)
+- **Usage:** 5% der Zeit
+
+#### **Layer 2: SYM** (Advanced Symbols)
+- **Symbols:** ~, !, @, #, $, %, ^, &, *, (, ), etc.
+- **Activation:** Thumb Key (Sym)
+- **Usage:** 3% der Zeit
+
+#### **Layer 3: FUN** (Function Keys)
+- **F-Keys:** F1-F12, Esc, PrintScreen
+- **Activation:** Thumb Key (Fun)
+- **Usage:** 1% der Zeit
+
+#### **Layer 4: NAV** (Navigation & Editing)
+- **Navigation:** Arrows, Home, End, PageUp, PageDown, Insert, Tab
+- **Activation:** Thumb Key (Nav)
+- **Usage:** <1% der Zeit
+
+#### **Layer 5: MOUSE** (Mouse Simulation)
+- **Mouse:** Left/Middle/Right Click, Wheel Up/Down
+- **Activation:** Thumb Key (Mse)
+- **Usage:** Optional (nur für Maus-lose Setups)
+
+#### **Layer 6: MEDIA** (Media Controls)
+- **Media:** Volume (+, -, Mute), Play, Prev, Next
+- **Activation:** Thumb Key (Med)
+- **Usage:** <1% der Zeit
+
+#### **Layer 7: BUTTON/ADJUST** (System Functions)
+- **System:** Reset, Debug, Konfiguration
+- **Activation:** Thumb Keys (Btn)
+- **Usage:** Selten (nur für System-Administration)
+
+---
+
+### EurKey Integration (OPTIONAL - Nicht im offiziellen Miryoku Layout)
+
+**WICHTIG:** EurKey ist **NICHT** Teil des offiziellen Miryoku Standard-Layouts. EurKey ist ein separates, optionales Layout für deutsche Benutzer, das separat installiert und konfiguriert werden muss.
+
+**Für Sarah (German Content Creator) Journey:**
+
+Wenn EurKey separat konfiguriert wurde, fügt es deutsche Umlaute hinzu:
+
+| EurKey Mapping (Optional) | Key Combo | Character |
+|---------------------------|-----------|-----------|
+| **ä** | AltGr + a (oder Sym + a) | a-umlaut |
+| **ö** | AltGr + o (oder Sym + o) | o-umlaut |
+| **ü** | AltGr + u (oder Sym + u) | u-umlaut |
+| **ß** | AltGr + s (oder "SZ" mnemonic) | eszett |
+
+**UX Challenge:**
+- German User müssen lernen: "ä ist nicht im Base Layer, sondern im Sym Layer (wenn EurKey konfiguriert)"
+- **Predictive Viz Solution:** Zeige "Sym + a = ä" vor dem Tastendruck (nur wenn EurKey aktiv)
+- **Mnemonic Aids:** ß = "SZ" für einfacheres Merken
+
+**Hinweis für UX Design:** miryoku.space sollte EurKey als **optionale Erweiterung** behandeln, nicht als Kern-Feature. Das Standard-Training verwendet das offizielle Miryoku Layout ohne EurKey.
+
+---
+
+### Miryoku Learning Curve
+
+**Based on user experiences (Reddit, GitHub discussions):**
+
+**Timeline:**
+- **Week 1-2:** Base Layer mastery (letters, basic punctuation)
+- **Week 3-4:** Num + Sym Layer introduction
+- **Month 2-3:** HRM integration (Biggest hurdle!)
+- **Month 3-4:** Flow state achieved (60-80 WPM)
+- **Month 6+:** Advanced combinations (bilaterale HRM)
+
+**Common Pain Points:**
+1. **HRM Misfires** (40% churn rate in Week 2-3)
+   - "Ich wollte 't' tippen, aber hab Shift aktiviert"
+   - "Der Timing ist furchtbar!"
+   - Solution: **Predictive Visualization** ✅
+
+2. **Symbol Position Memory**
+   - "Wo ist nochmal das {?" (Sym Layer)
+   - "Ich finde das % nicht!"
+   - Solution: **Key Isomorphism Training** ✅
+
+3. **Layer Transition Confusion**
+   - "In welchem Layer bin ich gerade?"
+   - "Wie komme ich zurück zum Base Layer?"
+   - Solution: **Layer Indicator UI** ✅
+
+**Success Metrics:**
+- **Target:** 60 WPM bei 95% accuracy nach 8 weeks
+- **Baseline:** 40 WPM bei 90% accuracy bei QWERTY Umsteigern
+- **Improvement:** +20 WPM durch HRM Ergonomie
+
+---
+
+### UX Design Implications für miryoku.space
+
+**Critical Requirements from Miryoku Architecture:**
+
+1. **Predictive State Visualization (⭐⭐⭐ MVP)**
+   - Zeige HRM activation VOR dem Tastendruck
+   - Color-code: Tap (green) vs. Hold (orange)
+   - Real-time feedback: "Wenn du jetzt 't' drückst, wird das Shift!"
+
+2. **3x5+3 Keyboard Mirror (⭐⭐⭐ MVP)**
+   - Interactive split-keyboard visualization
+   - Zeige alle 36 keys mit layer states
+   - Highlight keys in real-time bei Tastendruck
+
+3. **Layer Transition Training (⭐⭐⭐ MVP)**
+   - Step-by-step curriculum pro Layer
+   - Visual layer indicator ("Du bist im NUM Layer")
+   - Smooth transitions mit Animation
+
+4. **EurKey German Support (⭐⭐ Growth)**
+   - German umlaut training (ä, ö, ü, ß)
+   - EurKey layer visualization
+   - Mnemonic aids für deutsche Sonderzeichen
+
+5. **Bilateral HRM Training (⭐⭐ Growth)**
+   - Advanced modifier combinations
+   - Left + Right hand coordination
+   - "Shift+Ctrl" bilaterale Übungen
+
+6. **Slow-Motion Replay (⭐⭐ Enhancement)**
+   - Frame-by-frame HRM analysis
+   - "Zeig mir was passiert ist!"
+   - Timing-Optimization Training
+
+---
+
+## Nächste Schritte:
+
+**Hast du noch weitere Dokumente die ich hinzufügen soll, oder sollen wir mit der UX Discovery Phase fortfahren?**
+
+**[C] Continue to UX Discovery** (Weiter zur UX-Erkundungsphase)
+
+---
+
+<!-- UX design content will be appended sequentially through collaborative workflow steps -->

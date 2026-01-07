@@ -35,17 +35,18 @@ workflow_status:
 
       - id: "research"
         name: "Research"
-        status: "required"
+        status: "completed"
         agent: "analyst"
         command: "/bmad:bmm:workflows:research"
-        output: ""
+        output: "_bmad-output/planning-artifacts/research/domain-rsi-ergonomics-keyboard-adoption-2026-01-05.md, _bmad-output/planning-artifacts/research/technical-typing-learning-architecture-gamification-2026-01-05.md"
 
       - id: "product-brief"
         name: "Product Brief"
-        status: "required"
+        status: "completed"
         agent: "analyst"
         command: "/bmad:bmm:workflows:create-product-brief"
-        output: ""
+        output: "_bmad-output/planning-artifacts/product-brief-bmad-miryoku-2026-01-06.md"
+        completed_at: "2026-01-06"
 
   # Phase 2: Planning (Required)
   - phase: "2"
@@ -53,17 +54,19 @@ workflow_status:
     workflows:
       - id: "prd"
         name: "PRD"
-        status: "required"
+        status: "completed"
         agent: "pm"
         command: "/bmad:bmm:workflows:create-prd"
-        output: ""
+        output: "_bmad-output/planning-artifacts/prd.md"
+        completed_at: "2026-01-06"
 
       - id: "create-ux-design"
         name: "UX Design"
-        status: "required"
+        status: "completed"
         agent: "ux-designer"
         command: "/bmad:bmm:workflows:create-ux-design"
-        output: ""
+        output: "_bmad-output/planning-artifacts/ux-design-specification.md"
+        completed_at: "2026-01-07"
 
   # Phase 3: Solutioning (Required)
   - phase: "3"
