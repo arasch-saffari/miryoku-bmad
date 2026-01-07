@@ -39,6 +39,7 @@ workflow_status:
         agent: "analyst"
         command: "/bmad:bmm:workflows:research"
         output: "_bmad-output/planning-artifacts/research/domain-rsi-ergonomics-keyboard-adoption-2026-01-05.md, _bmad-output/planning-artifacts/research/technical-typing-learning-architecture-gamification-2026-01-05.md"
+        shards: "_bmad-output/planning-artifacts/technical-research-shards/"
 
       - id: "product-brief"
         name: "Product Brief"
@@ -67,6 +68,7 @@ workflow_status:
         command: "/bmad:bmm:workflows:create-ux-design"
         output: "_bmad-output/planning-artifacts/ux-design-specification.md"
         completed_at: "2026-01-07"
+        shards: "_bmad-output/planning-artifacts/ux-design-shards/"
 
   # Phase 3: Solutioning (Required)
   - phase: "3"
